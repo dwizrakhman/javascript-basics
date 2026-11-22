@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 10-2</title>
+    <style>.kartu { width: 200px; padding: 10px; margin: 8px 0; }</style>
+</head>
+<body>
+    <h1 id="sapa">Selamat Datang</h1>
+    <p class="info">Mata kuliah: Desain Web</p>
+    <p class="info">Dosen: [Nama Dosen]</p>
+    <p class="info">Hari: [Hari Kuliah]</p>
+    <div class="kartu">Kartu Mahasiswa</div>
+    <div class="kartu">Kartu UKT</div>
+    <div class="kartu">Kartu Perpustakaan</div>
+
+     <script>
+        const sapa = document.getElementById("sapa");
+        sapa.textContent = "Mohammad Biaz Dwi Rakhman";
+ 
+        const semuaInfo = document.querySelectorAll(".info");
+        semuaInfo.forEach((p) => {
+            p.style.color = "blue";
+        });
+ 
+        const semuaKartu = document.querySelectorAll(".kartu");
+        semuaKartu.forEach((kartu) => {
+            kartu.style.border = "1px solid gray";
+        });
+    </script>
+</body>
+</html>

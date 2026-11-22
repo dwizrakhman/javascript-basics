@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minggu 10 — DOM Selection</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .kotak { border: 2px solid #333; padding: 10px; margin: 10px 0; border-radius: 5px; }
+        .highlight { background-color: yellow; }
+    </style>
+</head>
+<body>
+    <h1 id="judul">Belajar DOM Selection</h1>
+    <p class="teks">Paragraf pertama — class="teks"</p>
+    <p class="teks">Paragraf kedua — class="teks"</p>
+    <p id="paragraf-khusus">Paragraf khusus dengan ID</p>
+
+    <div class="kotak" id="kotak1">Kotak 1</div>
+    <div class="kotak" id="kotak2">Kotak 2</div>
+    <div class="kotak" id="kotak3">Kotak 3</div>
+
+    <ul id="daftar-mahasiswa">
+        <li>Budi</li>
+        <li>Ani</li>
+        <li>Andi</li>
+        <li>Sari</li>
+    </ul>
+
+    <script>
+        // === Cara 1: getElementById — mencari SATU elemen berdasarkan ID ===
+        const judul = document.getElementById("judul");
+        console.log("Judul:", judul.textContent);
+        judul.style.color = "purple";
+
+        // === Cara 2: querySelector — mencari SATU elemen (pilihan CSS pertama) ===
+        const paragrafKhusus = document.querySelector("#paragraf-khusus");
+        console.log("Paragraf khusus:", paragrafKhusus.textContent);
+
+        // === Cara 3: querySelectorAll — mencari SEMUA elemen (NodeList) ===
+        const semuaTeks = document.querySelectorAll(".teks");
+        console.log("Jumlah paragraf .teks:", semuaTeks.length);
+
+        semuaTeks.forEach((el, index) => {
+            console.log(`  Teks ${index + 1}:`, el.textContent);
+        });
+
+        // === Cara 4: getElementsByClassName — mencari SEMUA elemen ===
+        const semuaKotak = document.getElementsByClassName("kotak");
+        console.log("Jumlah kotak:", semuaKotak.length);
+
+        // Ubah warna semua kotak
+        for (let i = 0; i < semuaKotak.length; i++) {
+            semuaKotak[i].style.backgroundColor = "lightblue";
+            semuaKotak[i].style.padding = "15px";
+        }
+
+        // === Cara 5: querySelector dengan selector campuran ===
+        const itemPertama = document.querySelector("#daftar-mahasiswa li:first-child");
+        console.log("Mahasiswa pertama:", itemPertama.textContent);
+        itemPertama.style.fontWeight = "bold";
+        itemPertama.style.color = "red";
+    </script>
+</body>
+</html>

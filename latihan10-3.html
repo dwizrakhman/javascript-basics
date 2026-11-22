@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan 10-3</title>
+</head>
+<body>
+    <h1>Latihan 3 — Pencarian Mahasiswa</h1>
+
+    <script>
+        // Array berisi minimal 5 nama mahasiswa
+        const daftarMahasiswa = ["Biaz", "Andra", "Adit", "fahrian", "fahri"];
+
+        // Fungsi pencarian
+        function cariMahasiswa(namaArray, namaDicari) {
+            const indeks = namaArray.indexOf(namaDicari);
+
+            if (indeks !== -1) {
+                console.log(namaDicari + " ditemukan di indeks " + indeks + "!");
+            } else {
+                console.log(namaDicari + " tidak ditemukan di daftar.");
+            }
+        }
+
+        // Panggil fungsi: satu nama ada, satu nama tidak ada
+        cariMahasiswa(daftarMahasiswa, "Biaz");
+        cariMahasiswa(daftarMahasiswa, "fajar");
+    </script>
+</body>
+</html>
